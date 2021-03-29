@@ -1,0 +1,160 @@
+<!--Joseph Dayonot, Nicholas Smith, Adil Maalim, Alaukikdeep Boparai
+This code is The first level of the quiz game and this html file provides the modals and layout for the popup quiz 
+and the popup menu for victory or defeat as well as the level title and the player and monster ID tags-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" 
+        content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Modal</title>
+        <link href="finalProjectCSS.css" rel="stylesheet">
+        <script defer src="finalProjectJSLevel1.js"></script>
+    </head>
+    <body>
+        
+        
+        <div class="modal" id="modal">
+            <div class="modal-header">
+               
+                
+                <div class="title" id="modalTitle"><p>Question</p></div>
+
+               <!-- <button data-close-button class="close-button">&times;</button> -->
+            </div>
+
+            <!--insert content for modal here-->
+            <h1 id="question">What is the answer to this question?</h1>
+            
+           
+            <div class="choice-container" id="divChoice1">
+                <p class="choice-prefix">A.</p>
+                <p class="choice-text"data-number="1" id="closeAlt">Choice 1</p>
+            </div>
+            <div class="choice-container" id="divChoice2">
+                <p class="choice-prefix">B.</p>
+                <p class="choice-text"data-number="2">Choice 2</p>
+            </div>
+            <div class="choice-container" id="divChoice3">
+                <p class="choice-prefix">C.</p>
+                <p class="choice-text"data-number="3">Choice 3</p>
+            </div>
+            <div class="choice-container" id="divChoice4">
+                <p class="choice-prefix">D.</p>
+                <p class="choice-text"data-number="4">Choice 4</p>
+            </div>
+
+        </div>
+
+
+
+        <!--end popup-->
+        <div class="modal" id="modalEnd">
+            <div class="modal-header">
+               
+                
+                <div class="title" id="modalTitleEnd"><p>Victory or Defeat</p></div>
+
+               <!-- <button data-close-button class="close-button">&times;</button> -->
+            </div>
+
+            <!--insert content for modal here-->
+            <h1 id="questionEnd">Congratulations or Defeated</h1>
+            
+
+            <div class="modalButtonContainer" id="nextLevelContainer">
+
+                <a href="Level2.html"><button class="thisOrThat">Go to Next Level</button></a>
+                
+            </div>
+
+            <div class="modalButtonContainer" id="retryContainer">
+
+                <button class="thisOrThat" onclick = "retryFunction()" >Retry</button>
+
+            </div>
+
+            <div class="modalButtonContainer">
+                <a href="index.html"><button class="thisOrThat" id="returnTitle">Return to Title</button></a>
+                
+
+            </div>
+            
+            
+            
+
+        </div>
+
+
+  
+       
+
+        <div id="overlay"></div> <!--dims screen-->
+        
+        
+        
+
+       
+        <!--start of animation divs-->
+        
+        
+
+     
+        <!--background music-->
+        <audio id = "backMusic" loop="loop" src="Sounds\Music\The Last Encounter (Original Version).mp3">
+
+        </audio>
+
+
+           <!--background Container-->
+        <div class = "backgroundContainer" id = "backgroundContainer">
+
+            <h1 class="levelTitle">Level 1: Beginner Practices</h1>
+
+            <img class = "forest" id ="forest" src="Assets/pixelArtForest.png">
+
+            <div class = "Character2" id="idle">
+                <img class = "charSpriteSheet pixelart" src="Assets/Characters/Warrior_Sheet-Effect.png" id="playerSprite2">
+            </div> 
+            
+            
+            <div class = "Character" id="idle">
+                <img class = "charSpriteSheet pixelart" src="Assets/Characters/Warrior_Sheet-Effect.png" id="playerSprite">
+            </div> 
+            
+            <button data-modal-target="#modal" id="questionGenerate">Attack/Generate Question</button>
+
+        </div>
+
+        <div class="HUDcontainer">
+
+            <h2>Sucesfully answer questions to increase score. Answer all questions and Earn enough score to defeat foe and progress to next level. Fail to earn enough score and you will be defeated.</h2>
+            <h1 id="scoreNotify">Score Increased!</h1>
+            <h1 id="score">Score: 0</h1>
+
+            
+
+            
+
+        </div>
+
+        <h2 id="playerName">You</h3>
+        <h2 id="enemyName">Warrior Shade</h3>
+
+  
+        
+        
+        
+      
+
+        
+
+    
+        <!-- of animation divs-->
+
+        
+    </body>
+</html>

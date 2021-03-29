@@ -1,0 +1,127 @@
+<!--
+Joseph Dayonot, Nicholas Smith, Adil Maalim, Alaukikdeep Boparai
+This code is the html for the title screen that directs the user to level 1 and has a popup for the asset credits. The landing page if uploaded to a web server.
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" 
+        content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Modal</title>
+        <link href="finalProjectCSS.css" rel="stylesheet">
+        <script defer src="TitleJS.js"></script>
+    </head>
+    <body>
+        
+        
+     
+
+
+  
+        <div class="modal" id="modal">
+            <div class="modal-header">
+               
+                
+                <div class="title" id="modalTitle"><p></p></div>
+
+               <button data-close-button class="close-button">&times;</button> 
+            </div>
+
+            <!--insert content for modal here-->
+            <h1 id="question">A project for TINFO482 [v 1.0]
+                    <br>
+                    Project Members: Joseph Dayonot, Alaukikdeep Bopari, Nick Smith, Adil Maalim
+
+                    <br>
+                    <br>
+                    <u>Asset Credits [all assets used with permission]:</u>
+                    <br>
+                    "Pixel Art Forest" by edermunizz - retrieved from itch.io
+                    <br>
+                    "Pixel Fantasy Caves" by SzadiArt - retrieved from itch.io
+                    <br>
+                    "Pixel Art Hills" by edermunizz - retrieved from itch.io
+                    <br>
+                    "Warrior-Free Animation set v1.3" by clembod - retrieved from itch.io
+                    <br>
+                    "2D Pixel Art Minotaur Sprites" by Elthen's Pixel Art Shop - retrieved from itch.io
+                    <br>
+                    "Rogue Knight" by Kronovi- - retrieved from itch.io
+                    <br>
+                    "UI sound effects pack" by David Mckee - soundcloud.com/virix - retrieved from opengameart.org
+                    <br>
+                    "War of the Arcane 18 rpg tracks" by SketchyLogic - retrieved from opengameart.org
+                    <br>
+                    "Fanfares" by Spring - retrieved from opengameart.org
+                    <br>
+                    "A Dream of First Flight" composed by Jonathan Shaw [www.jshaw.co.uk] - retrieved from opengameart.org
+                    <br>
+                    "Rainy Hearts" font by Camellina - retrieved from dafont.com
+                    
+
+            </h1>
+            
+
+
+            </div>
+
+        </div>
+
+
+        <button data-modal-target="#modal" id="questionGenerate">Credits</button>
+        <a href="level1.html">
+            <button class="startGameButton">Start Game</button>
+        </a>
+       
+        
+
+       
+        <!--start of animation divs-->
+        
+        
+
+     
+        <!--background music-->
+        <audio id = "backMusic" loop="loop" src="Sounds/Music/A Dream of First Flight MP3.mp3">
+
+        </audio>
+
+
+           <!--background Container-->
+        <div class = "backgroundContainer" id = "backgroundContainer">
+            <img class = "forest" id ="forest" src="Assets/pixelArtForest.png">
+
+            <h1 class="levelTitle">CyberSecurity Master</h1>
+            
+            
+
+                
+
+        <div class="HUDcontainer">
+
+            <h2>A turn-based RPG to test your cybersecurity knowledge.</h2>
+
+            
+        </div>
+
+       
+
+   
+
+            
+         
+
+        </div>
+        
+        
+
+    
+        <!-- of animation divs-->
+
+        
+    </body>
+</html>

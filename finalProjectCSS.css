@@ -1,0 +1,780 @@
+/*
+Joseph Dayonot, Nicholas Smith, Adil Maalim, Alaukikdeep Boparai
+This code is the css page that provides the design of the text and layout and placement of all the buttons on the html files for all three levels
+*/
+
+
+* {
+  
+  font-family: pixelFont;
+
+}
+
+*, *::after, *::before {
+    box-sizing: border-box
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+   border: 2px solid whitesmoke;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: black;
+    width: 500px;
+    max-width: 80%;
+
+    /*added to test hiding modal*/
+    display: block;
+    
+}
+
+
+
+
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
+ 
+}
+
+.modal-header {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: right;
+    border-bottom: 2px  solid whitesmoke;
+    font-size: 1.25em;
+    
+    background-color: black;
+    
+}
+
+.modal-header.title{
+    font-size: 1.25rem;
+    font-weight: bold;
+    
+   
+}
+
+.modal-header .close-button{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+    
+    color: whitesmoke;
+    
+   
+}
+
+.modal-body {
+    padding: 10px 15px;
+    
+}
+
+#overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(39, 2, 24);
+    pointer-events: none;
+}
+
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+
+.choice-container {
+    display: flex;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.8rem;
+    
+    width: 10%;
+    border-radius: 4px;
+    background: rgb(7, 21, 49);
+    font-size: 1rem;
+    min-width: 25rem;
+
+    
+    
+}
+
+.choice-container:hover {
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 rgb(255, 255, 255);
+    transform: scale(1.02);
+    transform: transform 100ms;
+}
+
+.choice-prefix {
+    padding: 0.4rem 0.4rem;
+    color: rgb(255, 255, 255);
+}
+
+.choice-text {
+    padding: 2rem;
+    width: 100%;
+}
+
+
+.correct {
+    background: linear-gradient(32deg, rgba(11, 223, 36) 0%, rgb(41, 232, 111) 100%);
+}
+
+.incorrect {
+    background: linear-gradient(32deg, rgba(230, 29, 29, 1) 0%, rgb(224, 11, 11, 1) 100%);
+}
+/*added 2/21*/
+
+
+/*----------modal fonts-----------*/
+.modal-header > div {
+
+  font-family: pixelFont;
+  text-align: center;
+  color: whitesmoke;
+
+  
+}
+
+#question {
+  font-family: pixelFont;
+  text-align: center;
+  color: whitesmoke;
+  font-size: 1.5em;
+  padding: 10px;
+}
+
+.choice-container > p {
+  font-family: pixelFont;
+  text-align: center;
+  color: whitesmoke;
+  font-size: 1.5em;
+}
+
+
+
+.exampleTextBox {
+   
+    /*added to test hiding modal*/
+    height: 400px;
+    width: 300px;
+    background-color: rgb(250, 244, 244);
+    border: 10px solid black;
+   padding: 15px;
+    text-align: center;
+    position: absolute;
+    left: 700px;
+    top: 400px;
+
+    font-size: 16px;
+    font-family: pixelFont;
+    font-style: bold;
+    border-style: solid; /*solid or double look great*/
+    border-radius: 5px;
+
+    display: none;
+    
+
+}
+
+.exampleTextBoxShadow {
+    
+    border-style: hidden hidden solid solid; 
+}
+
+/*added 2/24
+
+nice colors: background-color: rgb(90, 36, 20); 
+
+*/
+body {
+    background-color: rgb(59, 2, 34); 
+
+ 
+    
+    animation: fadeInAnimation ease 5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards; 
+    margin: 0;
+}
+
+@keyframes fadeInAnimation { /*elements fade in on load*/
+    0% { 
+        opacity: 0; 
+    } 
+    100% { 
+        opacity: 1; 
+     } 
+}
+
+
+@font-face {
+   font-family: pixelFont; /*defines font name. When referenced somewhere else,
+   will use the custom font (see exampleTextBox for example*/
+    src:url(rainyhearts.ttf) /*font source file*/
+}
+
+
+
+
+
+/*--------------------start of animation css-------------------------------------*/
+
+
+
+canvas {
+    border: 1px solid black;
+    
+  }
+
+img {
+  border: 0px solid black;
+}
+
+
+/*css classes for indexanimation2.html
+-----------------------------------------------------*/
+:root {
+  --pixel-size: 3;
+  --pixel-sizeLev2: 5;  /*scales px art by x*/
+}
+
+/*
+overflow:hidden -> hides other frames. To see the whole sheet, comment out
+64 x 44 = original frame size.
+
+*/
+
+
+#playerName {
+  position: absolute;
+  color: whitesmoke;
+  left: 725px;
+  top: 550px;
+  display: block;
+}
+#playerName3 {
+  position: absolute;
+  color: whitesmoke;
+  left: 725px;
+  top: 600px;
+  display: block;
+}
+
+
+#enemyName {
+  position: absolute;
+  color: whitesmoke;
+  left: 1100px;
+  top: 550px;
+  display: block;
+}
+#enemyName2 {
+  position: absolute;
+  color: whitesmoke;
+  left: 1070px;
+  top: 500px;
+  display: block;
+}
+#enemyName3 {
+  position: absolute;
+  color: red;
+  left: 1065px;
+  top: 475px;
+  display: block;
+  background: black;
+  padding: 2px;
+  border: 3px solid black;
+  border-radius: 5px;
+
+  animation: titleAnimate 5s linear infinite; 
+  
+  
+ 
+}
+
+
+.Character {
+  width: calc(64px * var(--pixel-size));
+  height: calc(44px * var(--pixel-size));
+  background: none; /*highlights where crop position is when overflow is active*/
+  overflow:hidden;
+  position: absolute; /*position:relative*/
+  
+ 
+
+  left: 660px;
+  top: 575px;
+}
+
+.character2posForLevel3 {
+  
+  left: 660px;
+  top: 615px;
+}
+
+/*the Container, changing this moves the sheet*/
+.Character2 {
+  width: calc(64px * var(--pixel-size));
+  height: calc(44px * var(--pixel-size));
+  background: none; /*highlights where crop position is when overflow is active*/
+  overflow:hidden; 
+  position: absolute; 
+  display:block;
+
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  
+  /*flips image just in case
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1); */
+  
+  left: 1060px; /*adjust this to move sheet*/
+  top: 575px;
+  filter: brightness(0%) drop-shadow(10px 10px 10px white);
+  
+}
+
+
+.level2Enemy {
+  width: calc(41px * var(--pixel-sizeLev2));
+  height: calc(36px * var(--pixel-sizeLev2));
+  background: none; /*highlights where crop position is when overflow is active*/
+  overflow:hidden; 
+  position: absolute; 
+  display:block;
+
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  
+  /*flips image just in case
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1); */
+  
+  left: 1060px; /*adjust this to move sheet*/
+  top: 540px;
+  
+  
+}
+
+.Level2Animation {
+     animation: level2Idle 0.85s steps(4); /* idle*/
+  /* animation: moveSpriteSheet 1.9s steps(10); *//*attack*/
+  /* animation: moveSpriteSheet 1.9s steps(10); */  /*hurt*/
+  /* animation: moveSpriteSheet 1.9s steps(10); */  /*death*/
+  
+  width: calc(414px * var(--pixel-sizeLev2)); /*414px = size of sheet*/
+  animation-iteration-count: infinite;
+ 
+  position: absolute;  /*allows spritesheet to be moved around*/
+  
+}
+
+.level3Enemy {
+  width: calc(90px * var(--pixel-sizeLev2));
+  height: calc(96px * var(--pixel-sizeLev2));
+  background: none; /*highlights where crop position is when overflow is active*/
+  overflow:hidden; 
+  position: absolute; 
+  display:block;
+
+
+  
+  /*flips image just in case
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1); */
+  
+  left: 1000px; /*adjust this to move sheet*/
+  top: 425px;
+  
+  
+}
+
+.Level3Animation {
+  animation: level3Idle 0.9s steps(5);  
+  /* animation: moveSpriteSheet 1.9s steps(9); *//*attack*/
+  /* animation: level3Hurt 0.7s steps(3); */  /*hurt*/
+  /* animation: level3Death 1s steps(6); */  /*death*/
+  /*animation: level3Idle 0.9s steps(5);  /*idle*/
+  
+  width: calc(865px * var(--pixel-sizeLev2)); /*414px = size of sheet*/
+  animation-iteration-count: infinite;
+ 
+  position: absolute;  /*allows spritesheet to be moved around*/
+  
+}
+
+/* moves spritesheet to the left
+steps -> complete movement in x jumps/steps (based on number of frames in spritesheet)
+
+*/
+
+/*---------------character Animations-------------------*/
+.charSpriteSheet {
+   animation: moveSpriteSheet 1s steps(6);
+   width: calc(414px * var(--pixel-size)); /*414px = size of sheet*/
+   animation-iteration-count: infinite;
+  
+   position: absolute;  /*allows spritesheet to be moved around*/
+   
+}
+
+.charSpriteSheetHurt {
+  animation: moveSpriteSheetHurt 1s steps(5,start);
+  width: calc(414px * var(--pixel-size)); /*414px = size of sheet*/
+ 
+ animation-iteration-count: infinite;
+  position: absolute;  /*allows spritesheet to be moved around*/
+  
+}
+
+
+/*takes original position and moves a 100% of itself to the left*/
+@keyframes moveSpriteSheet {
+  from {
+    transform: translate3d(0,0,0);
+
+  } to {
+    transform: translate3d(-100%,0,0);
+  }
+}
+
+@keyframes moveSpriteSheetHurt {
+  from {
+    transform: translate(0);
+
+  } to {
+    transform: translate3d(-83%,0,0);
+  }
+}
+
+@keyframes level2Idle {
+  from {
+    transform: translate(0);
+
+  } to {
+    transform: translate3d(-40%,0,0);
+  }
+}
+
+@keyframes level3Idle {
+  from {
+    transform: translate(0);
+
+  } to {
+    transform: translate3d(-55.55%,0,0);
+  }
+}
+
+@keyframes level3Hurt {
+  from {
+    transform: translate(0);
+
+  } to {
+    transform: translate3d(-33.33%,0,0);
+  }
+}
+
+@keyframes level3Death {
+  from {
+    transform: translate(0);
+
+  } to {
+    transform: translate3d(-66.66%,0,0);
+  }
+}
+
+
+.attack {
+  top: calc(-572px * var(--pixel-size));
+}
+
+.hurt {
+  top: calc(-264px * var(--pixel-size));
+
+}
+
+.playerDeathPartTwo {
+  top: calc(-220px * var(--pixel-size));
+}
+
+.level2Attack {
+
+  top: calc(-152px * var(--pixel-sizeLev2));
+
+}
+
+.level2Hurt {
+  top: calc(-90px * var(--pixel-sizeLev2));
+}
+
+.level2Death {
+  top: calc(-183px * var(--pixel-sizeLev2)); 
+}
+
+
+.level3Idle {
+
+  top: calc(-960px * var(--pixel-sizeLev2)); 
+
+}
+
+.level3Attack {
+
+  top: calc(-1248px * var(--pixel-sizeLev2)); /*1248/96 = row number = 13*/
+
+}
+
+.level3Hurt {
+  top: calc(-1728px * var(--pixel-sizeLev2));
+}
+
+.level3Death {
+  top: calc(-1824px * var(--pixel-sizeLev2)); 
+}
+/*---------------character Animations End-------------------*/
+
+
+.pixelart {
+  image-rendering: pixelated; 
+  /*anything designed in pixel art unblurs
+since original spritesheet is not natively scaled size
+if its rendered without this class it'll be blurry
+since browser is compensating for resources*/
+}
+
+button {
+ 
+  position: absolute;
+}
+
+#questionGenerate {
+  
+  width: 200px;
+  height: 100px;
+  font-family: pixelFont;
+  font-size: 25px;
+  color: whitesmoke;
+  background-color: rgb(20, 22, 20);
+  padding: 8px;
+
+
+  left: 44%;
+  top: 85%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+    
+}
+
+
+#questionGenerate:hover {
+  background-color: whitesmoke;
+  color: black;
+}
+
+
+.modalButtonContainer {
+  margin-bottom: 0.8rem;
+  margin-left: auto;
+  margin-right: auto;
+  /*border: 2px solid red; */
+  width: 200px;
+  height: 100px;
+  
+}
+
+
+.thisOrThat {
+
+
+  margin: 0;
+  position: absolute;
+  
+ 
+
+  width: 200px;
+  height: 100px; 
+  font-family: pixelFont;
+  font-size: 30px;
+  color: whitesmoke;
+  background-color: rgb(20, 22, 20);
+
+  
+    
+}
+
+
+
+.thisOrThat:hover {
+  background-color: rgb(22, 189, 22);
+  color: black;
+}
+
+.startGameButton {
+  width: 200px;
+  height: 100px;
+  font-family: pixelFont;
+  font-size: 25px;
+  color: whitesmoke;
+  background-color: rgb(20, 22, 20);
+  padding: 8px;
+
+
+  left: 44%;
+  top: 70%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.startGameButton:hover {
+
+  background-color: rgb(22, 189, 22);
+  color: black;
+
+}
+
+#modalEnd {
+  width: 1000px;
+  height:500px;
+
+}
+
+#modalEnd > h1 {
+  color: whitesmoke;
+  text-align: center;
+  padding: 10px;
+  
+}
+
+
+
+#hideIdle {
+    top: 310px;
+    left: 100px;
+
+}
+
+
+/*--------background css----------*/
+
+.backgroundContainer {
+  border: 10px solid rgb(82, 21, 58);
+  border-style: ridge; /*solid or double look great*/
+  border-radius: 20px;
+  background-color: black;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  
+
+}
+
+.forest {
+  
+  max-width: 100%;
+  width: 70%;
+  height: auto;
+  display: block;
+  margin: auto;
+
+  margin-top: 25px;
+  
+
+}
+
+
+/*blinkingtitle*/
+
+.levelTitle {
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: 5%;
+
+  font-family: pixelFont;
+  color: whitesmoke;
+  border: whitesmoke 2px solid;
+  padding: 8px;
+  
+
+  animation: titleAnimate 5s linear infinite; 
+}
+
+.title3Change {
+  color:black;
+  border: black 2px solid;
+}
+
+@keyframes titleAnimate{ 
+  0%{ 
+    opacity: 1; 
+  } 
+  50%{ 
+    opacity: 0.5; 
+  } 
+  100%{ 
+    opacity: 1;
+  } 
+} 
+
+
+.HUDcontainer {
+
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: 13%;
+
+  font-family: pixelFont;
+  color: whitesmoke;
+  /*border: whitesmoke 2px solid;*/
+  padding: 8px;
+
+  text-align: center;
+  
+
+  animation: titleAnimate 5s linear infinite; 
+
+}
+
+#scoreNotify {
+
+
+  color: rgb(40, 233, 40);
+  
+  display: none; 
+
+}
+
+#nextLevelContainer {
+  display: none;
+}
+
+#retryContainer {
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
