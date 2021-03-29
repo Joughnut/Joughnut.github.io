@@ -1,5 +1,5 @@
-For optimal experience of the game, Live preview or open from Titlescreen.html
-Issues: we had some resolution and scalability issues for example if the resolution is 1366x768p the 
+For optimal experience of the game, Live preview or open from index.html
+Known Issues: scalability issues for example if the resolution is 1366x768p the 
 elements of the code will scatter, the optimal range would be 1920x1080p. 
 The scalability issues will appear if the window is not fullscreen or if the player zooms in or out.
 
