@@ -2,8 +2,8 @@ Senior Project as part of TINFO482 Course for UW Tacoma.
 
 For optimal experience of the game, Live preview or open from index.html
 
-Known Issues: scalability issues for example if the resolution is 1366x768p the 
-elements of the code will scatter, the optimal range would be 1920x1080p. 
+Known Issues: scalability issues in some resoloutions below and above 1920 x 1080. Main UI font and characters will scatter due to how front-end was
+coded in CSS.
 The scalability issues will appear if the window is not fullscreen or if the player zooms in or out.
 
 Group Members: Joseph Dayonot, Nicholas Smith, Adil Maalim, Alaukikdeep Boparai
