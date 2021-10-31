@@ -266,7 +266,7 @@ function sound(src) {
 }
 
 //sounds
-var correctSound = new sound("Sounds/UI pack 1/Message-B_Accept.wav");
+var correctSound = new sound("Sounds/UI pack 1/MESSAGE-B_Accept.wav");
 var incorrectSound = new sound("Sounds/UI pack 1/ALERT_Error.wav");
 var menuOpen = new sound("Sounds/UI pack 1/MENU_Pick.wav");
 var menuClose = new sound("Sounds/UI pack 1/MENU B_Back.wav");
